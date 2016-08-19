@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class PostsController {
@@ -33,6 +34,18 @@ public class PostsController {
         model.addAttribute("post", post);
         return "posts/view";
     }
+
+    @RequestMapping("posts")
+    public String index(Model model) {
+        List<Post> allPosts = postService.findAll();
+        model.addAttribute("allPosts", allPosts);
+
+//        List<Post> latest3Posts = latest5Posts.stream()
+//                .limit(3).collect(Collectors.toList());
+//        model.addAttribute("latest3posts", latest3Posts);
+        return "posts/allPosts";
+    }
+
 }
 
 
