@@ -1,13 +1,27 @@
 package blog.models;
 
+import javax.persistence.*;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 30, unique = true)
     private String username;
+
+    @Column(length = 60)
     private String passwordHash;
+
+    @Column(length = 100)
     private String fullName;
+
+    @OneToMany(mappedBy = "author")
     private Set<Post> posts = new HashSet<>();
 
 
@@ -24,18 +38,22 @@ public class User {
     }
 
     public void setUsername(String username) {
+
         this.username = username;
     }
 
     public String getPasswordHash() {
+
         return passwordHash;
     }
 
     public void setPasswordHash(String passwordHash) {
+
         this.passwordHash = passwordHash;
     }
 
     public String getFullName() {
+
         return fullName;
     }
 
@@ -54,18 +72,25 @@ public class User {
     public User() {
     }
 
+    public User(String username, String fullName) {
+        this.username = username;
+        this.fullName = fullName;
+    }
+
     public User(Long id, String username, String fullName) {
         this.id = id;
         this.username = username;
         this.fullName = fullName;
     }
 
-
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", username='" + username + '\'' +
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", passwordHash='" + passwordHash + '\'' +
-                ", fullName='" + fullName + '\'' + '}';
+                ", fullName='" + fullName + '\'' +
+                '}';
     }
 }
 
