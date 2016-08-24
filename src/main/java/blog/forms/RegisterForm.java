@@ -28,4 +28,3 @@ public class RegisterForm {
         this.password = password;
     }
 }
-
