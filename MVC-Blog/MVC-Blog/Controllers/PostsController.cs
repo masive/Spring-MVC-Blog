@@ -127,6 +127,12 @@ namespace MVC_Blog.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult Load()
+        {
+            return PartialView("AddComment");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

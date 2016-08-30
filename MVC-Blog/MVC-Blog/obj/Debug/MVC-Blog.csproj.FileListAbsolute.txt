@@ -79,3 +79,4 @@ c:\users\mariana\documents\visual studio 2015\Projects\MVC-Blog\MVC-Blog\bin\Mic
 c:\users\mariana\documents\visual studio 2015\Projects\MVC-Blog\MVC-Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\mariana\documents\visual studio 2015\Projects\MVC-Blog\MVC-Blog\obj\Debug\MVC-Blog.dll
 c:\users\mariana\documents\visual studio 2015\Projects\MVC-Blog\MVC-Blog\obj\Debug\MVC-Blog.pdb
+C:\Users\Mariana\Documents\Visual Studio 2015\Projects\MVC-Blog\MVC-Blog\obj\Debug\MVC-Blog.csprojResolveAssemblyReference.cache

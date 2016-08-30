@@ -17,13 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Блог", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Блог", "Blog", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Начало", "Index", "Home")</li>
                     <li>@Html.ActionLink("Статии", "Index", "Posts")</li>
-                    <li>@Html.ActionLink("Нова статия", "Create", "Posts")</li>
+                    <li>@Html.ActionLink("Контакти", "Contacts", "Home")</li>
+                    <li>@Html.ActionLink("За нас", "About", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

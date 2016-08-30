@@ -4,40 +4,24 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>View</h2>
 
-<div>
-    <h4>Post</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Заглавие
-        </dt>
+<fieldset>
+    <legend>Article</legend>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
 
-        <dt>
-            Тяло
-        </dt>
+    <div class="display-label">Text</div>
+    <div class="display-field">@Html.Raw(Model.Body)</div>
 
-        <dd>
-            <textarea disabled="disabled" rows="20" class="form-control text-box multi-line">@Model.Body</textarea>
-            
-        </dd>
+    <div class="display-label">PublishedDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.Date)</div>
+</fieldset>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-    </dl>
-</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
